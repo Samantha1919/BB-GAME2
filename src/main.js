@@ -67,10 +67,9 @@ function addFruitDebut() {  // fruit en haut à faire tomber
     render: {
     fillStyle: "black",
   },
+  });
 
-});
-
-fruitDebut = body;
+  fruitDebut = body;
 
   World.add(world, body);
 
@@ -102,7 +101,8 @@ window.onkeydown = (event) => {
       case "Space":
         if (disableAction) return;
         disableAction = true;
-        Sleeping.set(fruitDebut, false);    // met isSleeping à false
+        Sleeping.set(fruitDebut, false);
+        console.log("sould realese")    // met isSleeping à false
         setTimeout(() => {   // on ajoute un timeout pr que ca fasse un temps dattente avant quil y ait un nv fruit 
           addFruitDebut();
           disableAction = false; // on la remet à false à la fin du timeout
