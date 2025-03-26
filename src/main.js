@@ -17,36 +17,34 @@ const render = Render.create({
   options: {
     wireframes: false,
     background: "#F7F4C8",
-    width: 620,
-    height: 850,
+    width: 310,  // 620
+    height: 425, // 850 
   },
 });
 
 const world = engine.world;
 
-const ground = Bodies.rectangle(310, 820, 620, 60, {
+const ground = Bodies.rectangle(155, 410, 310, 30, {  // 310 820 620 60
   isStatic: true,
   render: {
     fillStyle: "#E6B143",
   },
 });
 
-const murGauche =  Bodies.rectangle(15, 395, 30, 790, {
+const murGauche =  Bodies.rectangle(7.5, 197.5, 15, 395, { // 15 395 30 790
   isStatic: true,
   render: {
     fillStyle: "#E6B143",
   },
 });
 
-const murDroite =  Bodies.rectangle(605, 395, 30, 790, {
+const murDroite =  Bodies.rectangle(302.5, 197.5, 15, 395, { // 605 395 30 790
   isStatic: true,
   render: {
     fillStyle: "#E6B143",
   },
 });
 
-
-const box = Bodies.circle(50, 50, 50,);
 
 
 
@@ -62,7 +60,7 @@ let disableAction = false;
 
 function addFruitDebut() {  // fruit en haut à faire tomber
 
-  const body = Bodies.circle(300, 50, 20, { // pk c render au lieu de options
+  const body = Bodies.circle(150, 50, 20, { // pk c render au lieu de options
     isSleeping:true,  // met le fruit en attente, au "dodo"
     render: {
     fillStyle: "black",
