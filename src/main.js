@@ -56,6 +56,14 @@ Runner.run(engine);
 let fruitDebut = null;
 let interval = null;
 let disableAction = false;
+let bouton = document.getElementById("start-button");
+let clique = false;
+
+bouton.addEventListener("click",function(){
+  clique = true;
+});
+
+
 
 
 function addFruitDebut() {  // fruit en haut à faire tomber
@@ -73,8 +81,15 @@ function addFruitDebut() {  // fruit en haut à faire tomber
 
 }
 
+// if (clique === false){
+//   return; // si le bouton n'est pas cliqué ne rien fa
+// }
+
 
 window.onkeydown = (event) => {
+  if (clique === false){
+    return;
+  }
   switch (event.code) {   // switch choisit la condition possibles Right ou Left
     case "ArrowLeft":
       if (interval) return; // on peut mettre exit ou break ? 
@@ -99,8 +114,7 @@ window.onkeydown = (event) => {
       case "Space":
         if (disableAction) return;
         disableAction = true;
-        Sleeping.set(fruitDebut, false);
-        console.log("sould realese")    // met isSleeping à false
+        Sleeping.set(fruitDebut, false);   // met isSleeping à false
         setTimeout(() => {   // on ajoute un timeout pr que ca fasse un temps dattente avant quil y ait un nv fruit 
           addFruitDebut();
           disableAction = false; // on la remet à false à la fin du timeout
@@ -109,7 +123,7 @@ window.onkeydown = (event) => {
 }
 
 window.onkeyup = (event) => { 
-  console.log(event.code); // quand on relache la touche dcp up, ca stop l'intervalle dcp ca stop l'objet ca le freeze ca le laisse sur sa position
+  //console.log(event.code); // quand on relache la touche dcp up, ca stop l'intervalle dcp ca stop l'objet ca le freeze ca le laisse sur sa position
   switch (event.code) {
     case "ArrowLeft":
     case "ArrowRight": // pk on peut le mettre ici et on doit pas faire un 2eme window.onkeyup  

@@ -56,6 +56,13 @@ import {
   let fruitDebut = null;
   let interval = null;
   let disableAction = false;
+  let bouton = document.getElementById("start-button");
+  let clique = false;
+
+  bouton.addEventListener("click",function(){
+    clique = true;
+  });
+
   
   
   function addFruitDebut() {  // fruit en haut à faire tomber
@@ -75,9 +82,12 @@ import {
   
   
   window.onkeydown = (event) => {
+    if (clique === false){
+      return;
+    } // dans tt les autres cas genre clique === true dcp ca marchera de bouger les fleches et dappuyyer sur la touche espace
     switch (event.code) {   // switch choisit la condition possibles Right ou Left
       case "ArrowLeft":
-        if (interval) return; // on peut mettre exit ou break ? 
+        if (interval) return; 
         interval = setInterval(() => {
           if (fruitDebut.position.x + 20 > 70 ) // postion x > que la largeur du mur
           Body.setPosition(fruitDebut,{
@@ -99,8 +109,7 @@ import {
         case "Space":
           if (disableAction) return;
           disableAction = true;
-          Sleeping.set(fruitDebut, false);
-          console.log("sould realese")    // met isSleeping à false
+          Sleeping.set(fruitDebut, false);   // met isSleeping à false
           setTimeout(() => {   // on ajoute un timeout pr que ca fasse un temps dattente avant quil y ait un nv fruit 
             addFruitDebut();
             disableAction = false; // on la remet à false à la fin du timeout

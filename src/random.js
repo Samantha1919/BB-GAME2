@@ -10,20 +10,6 @@ import {
   } from "matter-js";
   
   
-  function addRandomColor(){
-    // recuper r g  b aleatoirement entre 0 et 255
-    let R = Math.floor(Math.random() * 255);
-    let G = Math.floor(Math.random() * 255);
-    let B = Math.floor(Math.random() * 255);
-
-    R = R.toString(16);
-    G = G.toString(16);
-    B = B.toString(16);
-
-    return "#" + R + G + B;
-  }
-
-
   const engine = Engine.create();
   const render = Render.create({
     engine,
@@ -66,11 +52,33 @@ import {
   
   Render.run(render);
   Runner.run(engine);
+
+
+  
   
   let fruitDebut = null;
   let interval = null;
   let disableAction = false;
+  let bouton = document.getElementById("start-button");
+  let clique = false;
+
+  bouton.addEventListener("click",function(){
+    clique = true;
+  });
   
+  function addRandomColor(){
+    // recuper r g  b aleatoirement entre 0 et 255
+    let R = Math.floor(Math.random() * 255);
+    let G = Math.floor(Math.random() * 255);
+    let B = Math.floor(Math.random() * 255);
+
+    R = R.toString(16);
+    G = G.toString(16);
+    B = B.toString(16);
+
+    return "#" + R + G + B;
+  }
+
   
   function addFruitDebut() {  // fruit en haut à faire tomber
   
@@ -89,6 +97,9 @@ import {
   
   // si tu cliques sur le bouton tu peux utiliser ces touches variable cliqué = false au debut addeventlistener
   window.onkeydown = (event) => {
+    if (clique === false){
+      return;
+    }
     switch (event.code) {   // switch choisit la condition possibles Right ou Left
       case "ArrowLeft":
         if (interval) return; // on peut mettre exit ou break ? 
@@ -113,8 +124,7 @@ import {
         case "Space":
           if (disableAction) return;
           disableAction = true;
-          Sleeping.set(fruitDebut, false);
-          console.log("sould realese")    // met isSleeping à false
+          Sleeping.set(fruitDebut, false);  // met isSleeping à false
           setTimeout(() => {   // on ajoute un timeout pr que ca fasse un temps dattente avant quil y ait un nv fruit 
             addFruitDebut();
             disableAction = false; // on la remet à false à la fin du timeout
