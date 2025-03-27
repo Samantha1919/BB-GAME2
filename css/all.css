@@ -11,3 +11,18 @@ canvas {
     background-color: rgb(189, 220, 234);
     text-align: center;
   }
+
+  .start{
+    width: 200px;
+    height: 100px;
+    font-family: monospace;
+    background-color: #f4d9e8;
+    color: rgb(130, 45, 199);
+    border: 2px solid #0ff;
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  
