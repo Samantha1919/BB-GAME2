@@ -25,4 +25,11 @@ canvas {
     cursor: pointer;
   }
 
+  .arrow{
+    width: 160px;
+    height: 160px;
+    position: absolute;  /*  se base sur la taille de la page*/
+    bottom:0px;
+    right: 15px;  /* decalage par au cote droit de la page seulemt en position absolute */
+  }
   
