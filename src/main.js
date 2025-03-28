@@ -133,6 +133,10 @@ window.onkeyup = (event) => {
 }
 
 
+function saveTapioca(){
+  // remettre exactement les mm tapioca (nombre exact) sur la prochaine page
+}
+
 addFruitDebut();
 
 
