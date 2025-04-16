@@ -97,6 +97,7 @@ let interval = null;
 let disableAction = false;
 let bouton = document.getElementById("start-button");
 let clique = false;
+let fleche = document.getElementById("arrow");
 
 bouton.addEventListener("click", function () {
   clique = true;
@@ -177,7 +178,7 @@ window.onkeyup = (event) => {
   //console.log(event.code); // quand on relache la touche dcp up, ca stop l'intervalle dcp ca stop l'objet ca le freeze ca le laisse sur sa position
   switch (event.code) {
     case "ArrowLeft":
-    case "ArrowRight": // pk on peut le mettre ici et on doit pas faire un 2eme window.onkeyup  
+    case "ArrowRight": 
       clearInterval(interval);
       interval = null;  // on le remet sinon ca marchera plus commme  mon cas avant ca marchait quune seule fois qd jle bougeais
   }
@@ -188,8 +189,21 @@ function saveTapioca() {
   // remettre exactement les mm tapioca (nombre exact) sur la prochaine page
 }
 
+function supprimerTapioca(){
+  world.remove.body;
+}
+
+arrow.addEventListener("click", function () {
+  clique = true;
+});
+
+
+if bouton clique {
+  world.remove.body
+}
+
 addFruitDebut();
 
-quand jappuie sur la fleche
+
 
 
