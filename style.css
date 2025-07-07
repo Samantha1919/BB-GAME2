@@ -1,31 +1,41 @@
 body{
-    text-align: center;
-    background-color: rgb(255, 144, 222);
+
+   
+    background: var(--pink-light, #FFF5FE);
+}
+
+#booba{
+  width: 151px;
+  height: 264px;
 }
 
 h1{
-  font-size: 100px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  align-self: stretch;
+  color: var(--purple, #7F1E65);
+  text-align: center;
+  font-family: "Jersey 10";
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.click{
-  width: 400px;
-  height: 100px;
-  font-family: monospace;
-  margin: 0 auto;
+h2{
+  color: var(--purple, #7F1E65);
+  text-align: center;
+  font-family: "Fira Mono";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.etouffement{
-  width: 350px ;
-  position:absolute;
-  right:10px;
-  bottom:4px;
+#start{
+  display: flex;
+  padding: 16px 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 8px solid var(--pink, #FFABCF);
+  background: var(--purple, #7F1E65);
 }
-
-.boba{
-  position:absolute;
-  left:10px;
-  bottom:300px;
-  width: 250px;
-}
-
