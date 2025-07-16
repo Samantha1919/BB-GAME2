@@ -1,6 +1,7 @@
 body{
     background-color: #FFF5FE;
     text-align: center;
+    
 }
 
 h1{
@@ -35,49 +36,9 @@ h1{
     gap: 33px;
   }
 
-.original{
-    background-image: url('../images/original.gif'); 
-    background-size: cover; 
-    border: none;
-    border-radius: 5px;
-    cursor:pointer;
-    width: 1200px;
-    height: 155px;
-    scale:50%;
-}
 
-.pink{
-    background-image: url('../images/pink.gif'); 
-    background-size: cover; 
-    border: none;
-    border-radius: 5px;
-    cursor:pointer;
-    width: 1200px;
-    height: 155px;
-    scale:50%;
-}
 
-.blue{
-    background-image: url('../images/blue.gif'); 
-    background-size: cover; 
-    border: none;
-    border-radius: 5px;
-    cursor:pointer;
-    width: 1200px;
-    height: 155px;
-    scale:50%;
-}
 
-.random{
-    background-image: url('../images/random.gif'); 
-    background-size: cover; 
-    border: none;
-    border-radius: 5px;
-    cursor:pointer;
-    width: 1200px;
-    height: 155px;
-    scale:50%;
-}
 
 /*.choix{ }*/
 
