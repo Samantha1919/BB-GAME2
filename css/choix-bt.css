@@ -1,6 +1,14 @@
+html{
+  height: 100%;
+}
+
 body{
     background-color: #FFF5FE;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
     
 }
 
@@ -31,9 +39,60 @@ h1{
   }
 
   #test{
-    display: inline-flex;
-    align-items: flex-start;
+    align-items:center;
     gap: 33px;
+    flex-grow: 1; /* utilise la place dispo fait grandir la div dcp c ca qui fait lespace. enft c collé au titre de base*/
+    display: flex;
+    justify-content: center;
+    img{ /* sapplique a toutes les images dans la div */
+      cursor:pointer;
+
+    }
+  }
+
+  #titre{
+ 
+  }
+
+  #next-div{
+    height: 150px;
+
+    justify-content: end;
+    width: 100%;
+    display: flex;
+
+
+  }
+
+  #next-btn{
+    border: 8px solid var(--pink-medium, #FFABCF);
+    background: var(--pink-dark, #7F1E65);
+    color: var(--pink-light, var(--pink-light, #FFF5FE));
+
+  font-family: "Jersey 10";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.96px;
+  display: inline-flex;
+  padding: 0px 10px 0px 16px;
+
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  margin-right: 32px;
+  opacity: 0.5;
+ 
+  
+  
+
+  }
+
+  #arrow-right{
+    width: 64px;
+    height: auto;
   }
 
 

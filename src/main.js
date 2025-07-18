@@ -10,9 +10,9 @@ import {
 } from "matter-js";
 
 let params = new URLSearchParams(document.location.search);
-let color = params.get("color") ?? "default";
+let color = params.get("color") ?? "yellow";
 let objectColor = {
-  "default":
+  "yellow":
   {
     "backgroundColor": "#F7F4C8",
     "groundColor": "#E6B143",
@@ -189,18 +189,18 @@ function saveTapioca() {
   // remettre exactement les mm tapioca (nombre exact) sur la prochaine page
 }
 
-function supprimerTapioca(){
-  world.remove.body;
-}
+//function supprimerTapioca(){
+  //world.remove.body;
+//}
 
 arrow.addEventListener("click", function () {
   clique = true;
 });
 
 
-if bouton clique {
-  world.remove.body
-}
+//if bouton clique {
+ // world.remove.body
+//}
 
 addFruitDebut();
 
