@@ -15,7 +15,7 @@ function selection(color){ // enft color c el nom que tu choiosis a lelement quo
         yellow.style.opacity=1;
         pink.style.opacity=0.5;
         blue.style.opacity=0.5;
-        random.style.opacity=0.5;
+        random.style.opacity=0.5; 
         
     }
     if (selected == "pink"){
@@ -40,11 +40,11 @@ function selection(color){ // enft color c el nom que tu choiosis a lelement quo
        
     }
 
-    button.style.opacity=1;
+    button.style.opacity=1; // de base en css jai mis le bouton en opacité 0.5 dcp la si tu fais nimporte quel choix ca le change en opacité 1 dcp il se met en 1 car tu as forvement une selection vu que tu es entré dans la fonction
 
 }
 
-function next(){
+function next(){ // fonction qui regarde si il y a une selection dcp tu peux appuyer mais tant quil nen pas ca fera rien
     if (selected != ""){
         document.location.href="../original/original.html?color="+selected
 

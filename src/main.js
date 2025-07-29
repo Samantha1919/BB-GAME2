@@ -10,7 +10,7 @@ import {
 } from "matter-js";
 
 let params = new URLSearchParams(document.location.search);
-let color = params.get("color") ?? "yellow";
+let color = params.get("color") ?? "yellow"; // le ?? sapelle "nullish coalescing operator" et il sert a donner une valeur par defaut
 let objectColor = {
   "yellow":
   {
