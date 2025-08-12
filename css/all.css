@@ -1,3 +1,9 @@
+  html{
+    height: 100%;
+
+
+  }
+
 canvas {
     display: block;
     margin: auto;
@@ -10,20 +16,13 @@ canvas {
   body{
     background-color: rgb(189, 220, 234);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
-  .start{
-    width: 200px;
-    height: 100px;
-    font-family: monospace;
-    background-color: #f4d9e8;
-    color: rgb(130, 45, 199);
-    border: 2px solid #0ff;
-    padding: 12px 24px;
-    font-size: 14px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
+  
+  
 
   .arrow{
     width: 160px;
@@ -33,3 +32,73 @@ canvas {
     right: 15px;  /* decalage par au cote droit de la page seulemt en position absolute */
   }
   
+  h1{
+    font-family: "Jersey 10";
+    align-self: stretch;
+    text-align: center;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2{
+    text-align: center;
+    font-family: monospace;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  #next-div{
+    height: 150px;
+
+    justify-content: end;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    align-self: flex-end;
+    position: absolute;
+    bottom:64px;
+
+
+  }
+
+  #next-btn{
+    border: 8px solid var(--pink-medium, #FFABCF);
+    background: var(--pink-dark, #7F1E65);
+    color: var(--pink-light, var(--pink-light, #FFF5FE));
+
+  font-family: "Jersey 10";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.96px;
+  display: inline-flex;
+  padding: 0px 10px 0px 16px;
+
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  margin-right: 32px;
+  opacity: 0.5;
+ 
+  
+
+  }
+
+  #arrow-right{
+    width: 64px;
+    height: auto;
+  }
+
+
+   /* ajouter bouton next et back */
