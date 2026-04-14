@@ -17,28 +17,32 @@ let objectColor = {
     groundColor: "#E6B143",
     murGaucheColor: "#E6B143",
     murDroiteColor: "#E6B143",
-    intitule: "#EB6E00",
+    h1: "#EB6E00",
+    h2: "#EB6E00",
   },
   pink: {
     backgroundColor: "#eb8ed8",
     groundColor: "#Df47c9",
     murGaucheColor: "#Df47c9",
     murDroiteColor: "#Df47c9",
-    intitule: "#7F1E65",
+    h1: "#7F1E65",
+    h2: "#7F1E65",
   },
   blue: {
     backgroundColor: "#8ebfeb",
     groundColor: "#2328a3",
     murGaucheColor: "#2328a3",
     murDroiteColor: "#2328a3",
-    intitule: "#236CF4",
+    h1: "#236CF4",
+    h2: "#236CF4",
   },
   random: {
     backgroundColor: addRandomColor(),
     groundColor: addRandomColor(),
     murGaucheColor: addRandomColor(),
     murDroiteColor: addRandomColor(),
-    intitule: addRandomColor(),
+    h1: addRandomColor(),
+    h2: addRandomColor(),
   },
 };
 
@@ -100,15 +104,15 @@ let clique = false;
 
 function addRandomColor() {
   // recuper r g  b aleatoirement entre 0 et 255
-  let R = Math.floor(Math.random() * 255);
+  let R = Math.floor(Math.random() * 255); // math random il genre un chiffre entre 0 et 1 dcp tu pexu faire 0,5 x 255
   let G = Math.floor(Math.random() * 255);
   let B = Math.floor(Math.random() * 255);
 
   R = R.toString(16);
   G = G.toString(16);
-  B = B.toString(16);
+  B = B.toString(16); // retourne 16 psq c en héxadécimal mais dcp pk on a besoin de les changer en string
 
-  return "#" + R + G + B;
+  return "#" + R + G + B; // prend le hasthag ren html
 }
 
 function addFruitDebut() {
@@ -178,14 +182,23 @@ window.onkeydown = (event) => {
 
 function xx() {
   // fonction qui est appelée au click de la touche espace et qui vérifie qu'il y a aumoins 1 tapioca de tombé
-  console.log("test");
 
   if (aumoinsUnTapioca == true) {
     saveTapioca();
   }
 
-  h2.textContent = "test";
-  console.log(h2);
+  h1.textContent = "Step 3";
+
+  h2.textContent = "Choose your liquid";
+  //let imageTest = document.createElement("../assets/machine-yellow.png");
+  //console.log(imageTest);
+
+  let machineYellow = document.createElement("img"); // cree un element dom et ca cree comme une image img en html // fabrique un nouvel element html en js
+  machineYellow.src = "../assets/machine-yellow.png";
+  document.body.appendChild(machineYellow); // rend visible limage, l'élément construit
+  machineYellow.height = 300;
+  machineYellow.width = 300;
+  // faire un id ou une classe pr le modifier en css
 
   // pas besopin de mettre de else vu que si y a pas de tapioca il ne fait rien
 }
@@ -205,15 +218,16 @@ window.onkeyup = (event) => {
 function saveTapioca() {
   // remettre exactement les mm tapioca (nombre exact) sur la prochaine page
   // recuperer limage du canvas
-  let canvas = document.getElementsByTagName("canvas")[0];
+  let canvas = document.getElementsByTagName("canvas")[0]; // on choisit celui quon recup (le 1er ct un truc bzr genre la lomgueur)
   const dataURL = canvas.toDataURL(); // fonction qui va save l'image du bubble tea aevc le bon nombre de tapioca dedans
   console.log(dataURL); // le console.log renvoie des chiffres des lettres et des operateurs bzr
 }
 
 addFruitDebut();
 
-let intitule = document.getElementById("regle"); // cest le h1 mais vu que les 2 h sont de la meme couleur g mis une variabke (un id) pr les 2
+// let intitule = document.getElementById("regle"); au debut javais mis ca vu que les 2 h sont de la meme couleur mais la je les separent pour changer le texte de chacun des 2
+let h1 = document.getElementById("h1");
 let h2 = document.getElementById("h2");
 
-intitule.style.color = objectColor[color].intitule; // recupere la couleur mise dans la classe de la couleur attribue et lapllique en js sur le h1 et h2
-h2.style.color = objectColor[color].intitule; // dmd pk on doit le mettre en barre 56 et pas parantheses // vu que les 2 h sont de la meme coouleur je pourrais juste mettre un id pr les 2 et dcp changer le nom h2 a la fin
+h1.style.color = objectColor[color].h1; // recupere la couleur mise dans la classe de la couleur attribue et lapllique en js sur le h1 et h2
+h2.style.color = objectColor[color].h2; // dmd pk on doit le mettre en barre 56 et pas parantheses
