@@ -116,7 +116,7 @@ function addRandomColor() {
 }
 
 function addFruitDebut() {
-  // fruit en haut à faire tomber
+  // booba en haut à faire tomber
 
   const body = Bodies.circle(150, 50, 20, {
     // pk c render au lieu de options
@@ -130,7 +130,6 @@ function addFruitDebut() {
 
   World.add(world, body);
 }
-
 let aumoinsUnTapioca = false;
 let button = document.getElementById("next-btn");
 
@@ -180,30 +179,41 @@ window.onkeydown = (event) => {
   }
 };
 
-function xx() {
+function GoToStep3() {
   // fonction qui est appelée au click de la touche espace et qui vérifie qu'il y a aumoins 1 tapioca de tombé
 
-  if (aumoinsUnTapioca == true) {
-    saveTapioca();
-  }
+  // const step3Div = document.getElementById("step3");
+
+  //console.log(step3Div);
 
   h1.textContent = "Step 3";
 
-  h2.textContent = "Choose your liquid";
-  //let imageTest = document.createElement("../assets/machine-yellow.png");
-  //console.log(imageTest);
+  h2.textContent = "Choose your straw";
 
-  let machineYellow = document.createElement("img"); // cree un element dom et ca cree comme une image img en html // fabrique un nouvel element html en js
-  machineYellow.src = "../assets/machine-yellow.png";
-  document.body.appendChild(machineYellow); // rend visible limage, l'élément construit
-  machineYellow.height = 300;
-  machineYellow.width = 300;
-  // faire un id ou une classe pr le modifier en css
+  disableAction = true;
 
-  // pas besopin de mettre de else vu que si y a pas de tapioca il ne fait rien
+  // let pinkStraw = document.createElement("img"); // cree un element dom et ca cree comme une image img en html // fabrique un nouvel element html en js
+  // pinkStraw.src = "../assets/pink-straw.png";
+  // step3Div.appendChild(pinkStraw); // rend visible limage, l'élément construit
+  // pinkStraw.height = 200;
+  // pinkStraw.width = 200;
+
+  const colors = ["pink", "yellow", "blue", "random"];
+
+  const paillesDiv = document.getElementById("step3");
+
+  for (let color of colors) {
+    console.log("color", color);
+    const nouvellePaille = document.createElement("img");
+    nouvellePaille.src = `/assets/${color}-straw.png`;
+    nouvellePaille.onclick = () => chooseStraw(color);
+    paillesDiv.appendChild(nouvellePaille);
+    nouvellePaille.width = 200;
+    nouvellePaille.height = 200;
+  }
 }
 
-window.xx = xx; // "exporte" fin met la fonction pr quelle soit accessible vu que cest un type module
+window.GoToStep3 = GoToStep3; // "exporte" fin met la fonction pr quelle soit accessible vu que cest un type module
 
 window.onkeyup = (event) => {
   //console.log(event.code); // quand on relache la touche dcp up, ca stop l'intervalle dcp ca stop l'objet ca le freeze ca le laisse sur sa position
@@ -214,14 +224,6 @@ window.onkeyup = (event) => {
       interval = null; // on le remet sinon ca marchera plus commme  mon cas avant ca marchait quune seule fois qd jle bougeais
   }
 };
-
-function saveTapioca() {
-  // remettre exactement les mm tapioca (nombre exact) sur la prochaine page
-  // recuperer limage du canvas
-  let canvas = document.getElementsByTagName("canvas")[0]; // on choisit celui quon recup (le 1er ct un truc bzr genre la lomgueur)
-  const dataURL = canvas.toDataURL(); // fonction qui va save l'image du bubble tea aevc le bon nombre de tapioca dedans
-  console.log(dataURL); // le console.log renvoie des chiffres des lettres et des operateurs bzr
-}
 
 addFruitDebut();
 
