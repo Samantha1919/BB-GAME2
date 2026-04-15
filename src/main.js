@@ -182,21 +182,11 @@ window.onkeydown = (event) => {
 function GoToStep3() {
   // fonction qui est appelée au click de la touche espace et qui vérifie qu'il y a aumoins 1 tapioca de tombé
 
-  // const step3Div = document.getElementById("step3");
-
-  //console.log(step3Div);
-
   h1.textContent = "Step 3";
 
   h2.textContent = "Choose your straw";
 
   disableAction = true;
-
-  // let pinkStraw = document.createElement("img"); // cree un element dom et ca cree comme une image img en html // fabrique un nouvel element html en js
-  // pinkStraw.src = "../assets/pink-straw.png";
-  // step3Div.appendChild(pinkStraw); // rend visible limage, l'élément construit
-  // pinkStraw.height = 200;
-  // pinkStraw.width = 200;
 
   const colors = ["pink", "yellow", "blue", "random"];
 
@@ -204,10 +194,10 @@ function GoToStep3() {
 
   for (let color of colors) {
     console.log("color", color);
-    const nouvellePaille = document.createElement("img");
+    const nouvellePaille = document.createElement("img"); // cree un element dom et ca cree comme une image img en html fabrique un nouvel element html en js
     nouvellePaille.src = `/assets/${color}-straw.svg`;
     nouvellePaille.onclick = () => chooseStraw(color);
-    paillesDiv.appendChild(nouvellePaille);
+    paillesDiv.appendChild(nouvellePaille); // rend visible limage, l'élément construit dans la div dcp
     nouvellePaille.width = 175;
     nouvellePaille.height = 200;
   }
