@@ -144,14 +144,14 @@ window.onkeydown = (event) => {
     event.code // switch choisit la condition possibles Right ou Left
   ) {
     case "ArrowLeft":
-      if (interval) return; // on peut mettre exit ou break ?
+      if (interval) return;
       interval = setInterval(() => {
         if (fruitDebut.position.x + 20 > 70)
           // postion x > que la largeur du mur
           Body.setPosition(fruitDebut, {
             x: fruitDebut.position.x - 1, // x postion actuelle -1 eneleve un pixel
             y: fruitDebut.position.y,
-          }); // y jsp g pas compris ce quil a dit
+          });
       }, 5);
       break;
     case "ArrowRight":
@@ -169,6 +169,9 @@ window.onkeydown = (event) => {
       if (disableAction) return;
       disableAction = true;
       Sleeping.set(fruitDebut, false); // met isSleeping à false
+      button.addEventListener("click", (event) => {
+        aumoinsUnTapioca = true; // mais si tu appuies pas c a false mais la je fais si tu appuies alors jsp????
+      });
       aumoinsUnTapioca = true;
       button.style.opacity = 1; // vu que quand on appuie sur espace ca fait tomber un tapioca donc le bouton se met en opacité 1
       setTimeout(() => {
@@ -179,32 +182,6 @@ window.onkeydown = (event) => {
   }
 };
 
-function GoToStep3() {
-  // fonction qui est appelée au click de la touche espace et qui vérifie qu'il y a aumoins 1 tapioca de tombé
-
-  h1.textContent = "Step 3";
-
-  h2.textContent = "Choose your straw";
-
-  disableAction = true;
-
-  const colors = ["pink", "yellow", "blue", "random"];
-
-  const paillesDiv = document.getElementById("step3");
-
-  for (let color of colors) {
-    console.log("color", color);
-    const nouvellePaille = document.createElement("img"); // cree un element dom et ca cree comme une image img en html fabrique un nouvel element html en js
-    nouvellePaille.src = `/assets/${color}-straw.svg`;
-    nouvellePaille.onclick = () => chooseStraw(color);
-    paillesDiv.appendChild(nouvellePaille); // rend visible limage, l'élément construit dans la div dcp
-    nouvellePaille.width = 175;
-    nouvellePaille.height = 200;
-  }
-}
-
-window.GoToStep3 = GoToStep3; // "exporte" fin met la fonction pr quelle soit accessible vu que cest un type module
-
 window.onkeyup = (event) => {
   //console.log(event.code); // quand on relache la touche dcp up, ca stop l'intervalle dcp ca stop l'objet ca le freeze ca le laisse sur sa position
   switch (event.code) {
@@ -214,6 +191,8 @@ window.onkeyup = (event) => {
       interval = null; // on le remet sinon ca marchera plus commme  mon cas avant ca marchait quune seule fois qd jle bougeais
   }
 };
+
+//function saveBubbleTea(){}
 
 addFruitDebut();
 
