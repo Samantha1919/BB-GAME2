@@ -205,10 +205,10 @@ function GoToStep3() {
   for (let color of colors) {
     console.log("color", color);
     const nouvellePaille = document.createElement("img");
-    nouvellePaille.src = `/assets/${color}-straw.png`;
+    nouvellePaille.src = `/assets/${color}-straw.svg`;
     nouvellePaille.onclick = () => chooseStraw(color);
     paillesDiv.appendChild(nouvellePaille);
-    nouvellePaille.width = 200;
+    nouvellePaille.width = 175;
     nouvellePaille.height = 200;
   }
 }
