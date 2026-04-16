@@ -1,4 +1,4 @@
-function GoToStep3() {
+function goToStep3() {
   // fonction qui est appelée au click de la touche espace et qui vérifie qu'il y a aumoins 1 tapioca de tombé
 
   h1.textContent = "Step 3";
@@ -22,4 +22,4 @@ function GoToStep3() {
   }
 }
 
-window.GoToStep3 = GoToStep3; // "exporte" fin met la fonction pr quelle soit accessible vu que cest un type module
+window.goToStep3 = goToStep3; // "exporte" fin met la fonction pr quelle soit accessible vu que cest un type module
