@@ -4,12 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./main.js">
-      // testé la page marche bien si tu y vas en ecrivant le lien en dur dans la barre de recherche
-    </script>
+    <link rel="stylesheet" href="./step3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Kalnia+Glaze:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./main.js"></script>
   </head>
   <body>
     <h1>Step 3</h1>
     <h2>Choose your straw</h2>
+
+    <img id="image2" className="image2" />
+
+    <div id="step3" class="step3"></div>
+
+    <div id="next-div">
+      <button id="next-btn" disabled>
+        NEXT<img src="../assets/arrow-right.svg" id="arrow-right" />
+      </button>
+    </div>
+    <script type="module">
+      goToStep3();
+    </script>
   </body>
 </html>

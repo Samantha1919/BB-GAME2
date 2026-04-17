@@ -1,21 +1,15 @@
+body {
+  text-align: center;
+  background-color: rgb(189, 220, 234);
+}
+
 html {
   height: 100%;
 }
 
-body {
-  background-color: #fff5fe;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 0;
-}
-
 h1 {
-  align-self: stretch;
-  color: var(--purple, #7f1e65);
-  text-align: center;
   font-family: "Jersey 10";
+  text-align: center;
   font-size: 72px;
   font-style: normal;
   font-weight: 400;
@@ -25,40 +19,46 @@ h1 {
 }
 
 h2 {
-  color: var(--purple, #7f1e65);
+  margin-bottom: 90px;
   text-align: center;
   font-family: monospace;
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin: 0;
   padding: 0;
 }
 
-#test {
-  align-items: center;
-  gap: 33px;
-  flex-grow: 1; /* utilise la place dispo fait grandir la div dcp c ca qui fait lespace. enft c collé au titre de base*/
+.step3 {
   display: flex;
+  gap: 30px;
   justify-content: center;
-  img {
-    /* sapplique a toutes les images dans la div */
-    cursor: pointer;
-  }
+  margin-top: 80px;
+}
+
+.image2 {
+  position: absolute;
+  top: 50px;
+  right: 50px;
 }
 
 #next-div {
   height: 150px;
+
   justify-content: end;
   width: 100%;
   display: flex;
+  align-items: end;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 64px;
 }
 
 #next-btn {
   border: 8px solid var(--pink-medium, #ffabcf);
   background: var(--pink-dark, #7f1e65);
   color: var(--pink-light, var(--pink-light, #fff5fe));
+
   font-family: "Jersey 10";
   font-size: 48px;
   font-style: normal;
@@ -67,6 +67,7 @@ h2 {
   letter-spacing: 0.96px;
   display: inline-flex;
   padding: 0px 10px 0px 16px;
+
   gap: 8px;
   display: flex;
   align-items: center;
@@ -79,5 +80,3 @@ h2 {
   width: 64px;
   height: auto;
 }
-
-/*.choix{ }*/

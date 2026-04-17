@@ -97,6 +97,7 @@ World.add(world, [ground, rightWall, leftWall]);
 Render.run(render);
 Runner.run(engine);
 
+let button = document.getElementById("next-btn");
 let tapiocaDebut = null;
 let interval = null;
 let disableAction = false;
@@ -129,13 +130,6 @@ function addTapiocaDebut() {
 
   World.add(world, body);
 }
-let button = document.getElementById("next-btn");
-
-// if (clique === false){
-//   return; // si le bouton n'est pas cliqué ne rien fa
-// }
-
-// au lieu de metrre les chiffres en dur il faudrait mettre des variables pour que le code soit + explicite
 
 window.onkeydown = (event) => {
   switch (
@@ -171,10 +165,6 @@ window.onkeydown = (event) => {
       if (isButtonDisabled) {
         //On le rends enabled
         button.disabled = false;
-        // on ajoute l"event listener onclick pour rediriger
-        button.onclick = (event) => {
-          document.location.href = "/step3/index.html?color";
-        };
         // On dit que le bouton est actif
         isButtonDisabled = false;
       }
@@ -197,7 +187,13 @@ window.onkeyup = (event) => {
   }
 };
 
-//function saveBubbleTea(){}
+function saveBubbleTea() {
+  let canvas = document.getElementsByTagName("canvas")[0]; // on choisit celui quon recup (le 1er ct un truc bzr genre la longueur)
+  const dataURL = canvas.toDataURL(); // fonction qui va save l'image du bubble tea aevc le bon nombre de tapioca dedans
+  console.log(dataURL); // le console.log renvoie des chiffres des lettres et des operateurs bzr
+  localStorage.setItem("monImage", dataURL); // met le dataURL dans un element qui sapelle monImage
+  document.location.href = "/step3/index.html?color=" + color;
+}
 
 addTapiocaDebut();
 
@@ -207,3 +203,5 @@ let h2 = document.getElementById("h2");
 
 h1.style.color = objectColor[color].h1; // recupere la couleur mise dans la classe de la couleur attribue et lapllique en js sur le h1 et h2
 h2.style.color = objectColor[color].h2;
+
+window.saveBubbleTea = saveBubbleTea; // exporte la fonction
