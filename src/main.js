@@ -94,7 +94,7 @@ const rightWall = Bodies.rectangle(302.5, 197.5, 15, 395, {
 
 World.add(world, [ground, rightWall, leftWall]);
 
-Render.run(render);
+Render.run(render); // test
 Runner.run(engine);
 
 let button = document.getElementById("next-btn");
