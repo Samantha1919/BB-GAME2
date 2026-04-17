@@ -1,79 +1,71 @@
-  html{
-    height: 100%;
-
-
-  }
+html {
+  height: 100%;
+}
 
 canvas {
-    display: block;
-    margin: auto;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  body{
-    background-color: rgb(189, 220, 234);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+body {
+  background-color: rgb(189, 220, 234);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-  
-  
+.arrow {
+  width: 160px;
+  height: 160px;
+  position: absolute; /*  se base sur la taille de la page*/
+  bottom: 0px;
+  right: 15px; /* decalage par au cote droit de la page seulemt en position absolute */
+}
 
-  .arrow{
-    width: 160px;
-    height: 160px;
-    position: absolute;  /*  se base sur la taille de la page*/
-    bottom:0px;
-    right: 15px;  /* decalage par au cote droit de la page seulemt en position absolute */
-  }
-  
-  h1{
-    font-family: "Jersey 10";
-    align-self: stretch;
-    text-align: center;
-    font-size: 72px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0;
-    padding: 0;
-  }
+h1 {
+  font-family: "Jersey 10";
+  align-self: stretch;
+  text-align: center;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}
 
-  h2{
-    text-align: center;
-    font-family: monospace;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0;
-    padding: 0;
-  }
+h2 {
+  text-align: center;
+  font-family: monospace;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}
 
+#next-div {
+  height: 150px;
 
-  #next-div{
-    height: 150px;
+  justify-content: end;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 64px;
+}
 
-    justify-content: end;
-    width: 100%;
-    display: flex;
-    align-items: end;
-    align-self: flex-end;
-    position: absolute;
-    bottom:64px;
-
-
-  }
-
-  #next-btn{
-    border: 8px solid var(--pink-medium, #FFABCF);
-    background: var(--pink-dark, #7F1E65);
-    color: var(--pink-light, var(--pink-light, #FFF5FE));
+#next-btn {
+  border: 8px solid var(--pink-medium, #ffabcf);
+  background: var(--pink-dark, #7f1e65);
+  color: var(--pink-light, var(--pink-light, #fff5fe));
 
   font-family: "Jersey 10";
   font-size: 48px;
@@ -90,15 +82,11 @@ canvas {
   height: 80px;
   margin-right: 32px;
   opacity: 0.5;
- 
-  
+}
 
-  }
+#arrow-right {
+  width: 64px;
+  height: auto;
+}
 
-  #arrow-right{
-    width: 64px;
-    height: auto;
-  }
-
-
-   /* ajouter bouton next et back */
+/* ajouter bouton next et back */

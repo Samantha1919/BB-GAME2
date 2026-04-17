@@ -100,7 +100,7 @@ Runner.run(engine);
 let fruitDebut = null;
 let interval = null;
 let disableAction = false;
-let clique = false;
+let isButtonDisabled = true;
 
 function addRandomColor() {
   // recuper r g  b aleatoirement entre 0 et 255
@@ -130,7 +130,6 @@ function addFruitDebut() {
 
   World.add(world, body);
 }
-let aumoinsUnTapioca = false;
 let button = document.getElementById("next-btn");
 
 // if (clique === false){
@@ -169,10 +168,17 @@ window.onkeydown = (event) => {
       if (disableAction) return;
       disableAction = true;
       Sleeping.set(fruitDebut, false); // met isSleeping à false
-      button.addEventListener("click", (event) => {
-        aumoinsUnTapioca = true; // mais si tu appuies pas c a false mais la je fais si tu appuies alors jsp????
-      });
-      aumoinsUnTapioca = true;
+      // Si le bouton est disabled
+      if (isButtonDisabled) {
+        //On le rends enabled
+        button.disabled = false;
+        // on ajoute l"event listener onclick pour rediriger
+        button.onclick = (event) => {
+          document.location.href = "/step3/index.html?color";
+        };
+        // On dit que le bouton est actif
+        isButtonDisabled = false;
+      }
       button.style.opacity = 1; // vu que quand on appuie sur espace ca fait tomber un tapioca donc le bouton se met en opacité 1
       setTimeout(() => {
         // on ajoute un timeout pr que ca fasse un temps dattente avant quil y ait un nv fruit
