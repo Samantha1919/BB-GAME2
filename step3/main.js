@@ -1,18 +1,29 @@
+let h1 = document.getElementById("h1");
+let h2 = document.getElementById("h2");
+
 let params = new URLSearchParams(document.location.search);
 let color = params.get("color") ?? "yellow"; // le ?? sapelle "nullish coalescing operator" et il sert a donner une valeur par defaut
 let objectColor = {
   // "un index" "recupere dcp genre yellow avec tout ce quil y a dans les accolades, recup la valeur de yellow"
   yellow: {
     backgroundColor: "#F7F4C8",
+    h1: "#EB6E00",
+    h2: "#EB6E00",
   },
   pink: {
     backgroundColor: "#eb8ed8",
+    h1: "#7F1E65",
+    h2: "#7F1E65",
   },
   blue: {
     backgroundColor: "#8ebfeb",
+    h1: "#236CF4",
+    h2: "#236CF4",
   },
   random: {
     backgroundColor: addRandomColor(),
+    h1: addRandomColor(),
+    h2: addRandomColor(),
   },
 };
 
@@ -48,6 +59,9 @@ function goToStep3() {
   const image2 = document.getElementById("image2");
   image2.src = image;
   image2.style.backgroundColor = objectColor[color].backgroundColor;
+
+  h1.style.color = objectColor[color].h1;
+  h2.style.color = objectColor[color].h2;
 }
 
-window.goToStep3 = goToStep3; // "exporte" fin met la fonction pr quelle soit accessible vu que cest un type module
+goToStep3();

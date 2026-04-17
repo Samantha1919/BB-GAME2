@@ -163,9 +163,7 @@ window.onkeydown = (event) => {
       Sleeping.set(tapiocaDebut, false); // met isSleeping à false
       // Si le bouton est disabled
       if (isButtonDisabled) {
-        //On le rends enabled
         button.disabled = false;
-        // On dit que le bouton est actif
         isButtonDisabled = false;
       }
       button.style.opacity = 1; // vu que quand on appuie sur espace ca fait tomber un tapioca donc le bouton se met en opacité 1
