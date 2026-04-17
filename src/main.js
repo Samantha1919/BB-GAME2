@@ -15,32 +15,32 @@ let objectColor = {
   yellow: {
     backgroundColor: "#F7F4C8",
     groundColor: "#E6B143",
-    murGaucheColor: "#E6B143",
-    murDroiteColor: "#E6B143",
+    leftWallColor: "#E6B143",
+    rightWallColor: "#E6B143",
     h1: "#EB6E00",
     h2: "#EB6E00",
   },
   pink: {
     backgroundColor: "#eb8ed8",
     groundColor: "#Df47c9",
-    murGaucheColor: "#Df47c9",
-    murDroiteColor: "#Df47c9",
+    leftWallColor: "#Df47c9",
+    rightWallColor: "#Df47c9",
     h1: "#7F1E65",
     h2: "#7F1E65",
   },
   blue: {
     backgroundColor: "#8ebfeb",
     groundColor: "#2328a3",
-    murGaucheColor: "#2328a3",
-    murDroiteColor: "#2328a3",
+    leftWallColor: "#2328a3",
+    rightWallColor: "#2328a3",
     h1: "#236CF4",
     h2: "#236CF4",
   },
   random: {
     backgroundColor: addRandomColor(),
     groundColor: addRandomColor(),
-    murGaucheColor: addRandomColor(),
-    murDroiteColor: addRandomColor(),
+    leftWallColor: addRandomColor(),
+    rightWallColor: addRandomColor(),
     h1: addRandomColor(),
     h2: addRandomColor(),
   },
@@ -49,8 +49,8 @@ let objectColor = {
 let choosenColor = objectColor[color]; // acceder param couleur actu
 let backgroundColor = choosenColor["backgroundColor"];
 let groundColor = choosenColor["groundColor"];
-let murGaucheColor = choosenColor["murGaucheColor"];
-let murDroiteColor = choosenColor["murDroiteColor"];
+let leftWallColor = choosenColor["leftWallColor"];
+let rightWallColor = choosenColor["rightWallColor"];
 
 console.log(objectColor[color]);
 
@@ -76,28 +76,28 @@ const ground = Bodies.rectangle(155, 410, 310, 30, {
   },
 });
 
-const murGauche = Bodies.rectangle(7.5, 197.5, 15, 395, {
+const leftWall = Bodies.rectangle(7.5, 197.5, 15, 395, {
   // 15 395 30 790
   isStatic: true,
   render: {
-    fillStyle: murGaucheColor,
+    fillStyle: leftWallColor,
   },
 });
 
-const murDroite = Bodies.rectangle(302.5, 197.5, 15, 395, {
+const rightWall = Bodies.rectangle(302.5, 197.5, 15, 395, {
   // 605 395 30 790
   isStatic: true,
   render: {
-    fillStyle: murDroiteColor,
+    fillStyle: rightWallColor,
   },
 });
 
-World.add(world, [ground, murDroite, murGauche]);
+World.add(world, [ground, rightWall, leftWall]);
 
 Render.run(render);
 Runner.run(engine);
 
-let fruitDebut = null;
+let tapiocaDebut = null;
 let interval = null;
 let disableAction = false;
 let isButtonDisabled = true;
@@ -115,18 +115,17 @@ function addRandomColor() {
   return "#" + R + G + B; // prend le hasthag ren html
 }
 
-function addFruitDebut() {
+function addTapiocaDebut() {
   // booba en haut à faire tomber
 
   const body = Bodies.circle(150, 50, 20, {
-    // pk c render au lieu de options
     isSleeping: true, // met le fruit en attente, au "dodo"
     render: {
       fillStyle: "black",
     },
   });
 
-  fruitDebut = body;
+  tapiocaDebut = body;
 
   World.add(world, body);
 }
@@ -145,29 +144,29 @@ window.onkeydown = (event) => {
     case "ArrowLeft":
       if (interval) return;
       interval = setInterval(() => {
-        if (fruitDebut.position.x + 20 > 70)
+        if (tapiocaDebut.position.x + 20 > 70)
           // postion x > que la largeur du mur
-          Body.setPosition(fruitDebut, {
-            x: fruitDebut.position.x - 1, // x postion actuelle -1 eneleve un pixel
-            y: fruitDebut.position.y,
+          Body.setPosition(tapiocaDebut, {
+            x: tapiocaDebut.position.x - 1, // x postion actuelle -1 eneleve un pixel
+            y: tapiocaDebut.position.y,
           });
       }, 5);
       break;
     case "ArrowRight":
       if (interval) return;
       interval = setInterval(() => {
-        if (fruitDebut.position.x + 20 < 590)
+        if (tapiocaDebut.position.x + 20 < 590)
           // postion x < que la largeur du mur
-          Body.setPosition(fruitDebut, {
-            x: fruitDebut.position.x + 1, // x postion actuelle +1 ajoute un pixel
-            y: fruitDebut.position.y,
+          Body.setPosition(tapiocaDebut, {
+            x: tapiocaDebut.position.x + 1, // x postion actuelle +1 ajoute un pixel
+            y: tapiocaDebut.position.y,
           });
       }, 5);
       break;
     case "Space":
       if (disableAction) return;
       disableAction = true;
-      Sleeping.set(fruitDebut, false); // met isSleeping à false
+      Sleeping.set(tapiocaDebut, false); // met isSleeping à false
       // Si le bouton est disabled
       if (isButtonDisabled) {
         //On le rends enabled
@@ -182,7 +181,7 @@ window.onkeydown = (event) => {
       button.style.opacity = 1; // vu que quand on appuie sur espace ca fait tomber un tapioca donc le bouton se met en opacité 1
       setTimeout(() => {
         // on ajoute un timeout pr que ca fasse un temps dattente avant quil y ait un nv fruit
-        addFruitDebut();
+        addTapiocaDebut();
         disableAction = false; // on la remet à false à la fin du timeout
       }, 1_000);
   }
@@ -200,11 +199,11 @@ window.onkeyup = (event) => {
 
 //function saveBubbleTea(){}
 
-addFruitDebut();
+addTapiocaDebut();
 
 // let intitule = document.getElementById("regle"); au debut javais mis ca vu que les 2 h sont de la meme couleur mais la je les separent pour changer le texte de chacun des 2
 let h1 = document.getElementById("h1");
 let h2 = document.getElementById("h2");
 
 h1.style.color = objectColor[color].h1; // recupere la couleur mise dans la classe de la couleur attribue et lapllique en js sur le h1 et h2
-h2.style.color = objectColor[color].h2; // dmd pk on doit le mettre en barre 56 et pas parantheses
+h2.style.color = objectColor[color].h2;
