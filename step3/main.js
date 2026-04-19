@@ -49,7 +49,7 @@ function goToStep3() {
     console.log("color", color);
     const nouvellePaille = document.createElement("img"); // cree un element dom et ca cree comme une image img en html fabrique un nouvel element html en js
     nouvellePaille.src = `/assets/${color}-straw.svg`;
-    // nouvellePaille.onclick = () => selection(color);
+    nouvellePaille.onclick = () => selection(color);
     paillesDiv.appendChild(nouvellePaille); // rend visible limage, l'élément construit dans la div dcp
     nouvellePaille.width = 175;
     nouvellePaille.height = 200;
