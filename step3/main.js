@@ -64,30 +64,52 @@ function goToStep3() {
   h2.style.color = objectColor[color].h2;
 }
 
-let selected = "";
+//let selected = "";
 
 function selection(color) {
-  let yellow = document.getElementById("yellow");
-  let pink = document.getElementById("pink");
-  let blue = document.getElementById("blue");
-  let random = document.getElementById("random");
+  // let yellow = document.getElementById("yellow");
+  // let pink = document.getElementById("pink");
+  // let blue = document.getElementById("blue");
+  // let random = document.getElementById("random");
+
+  // selected = color;
+
+  // if (selected === "yellow") {
+  //   yellow.style.visibility = "visible";
+  //   pink.style.visibility = "hidden";
+  //   blue.style.visibility = "hidden";
+  //   random.style.visibility = "hidden";
+  // }
+
+  // if (selected === "pink") {
+  //   pink.style.visibility = "visible";
+  //   blue.style.visibility = "hidden";
+  //   yellow.style.visibility = "hidden";
+  //   random.style.visibility = "hidden";
+  // }
+
+  // if (selected === "blue") {
+  //   blue.style.visibility = "visible";
+  //   pink.style.visibility = "hidden";
+  //   yellow.style.visibility = "hidden";
+  //   random.style.visibility = "hidden";
+  // }
+  // if (selected === "random") {
+  //   random.style.visibility = "visible";
+  //   pink.style.visibility = "hidden";
+  //   blue.style.visibility = "hidden";
+  //   yellow.style.visibility = "hidden";
+  // }
+
+  const straws = ["yellow", "pink", "blue", "random"];
+
+  for (let s of straws) {
+    document.getElementById(s).style.visibility = "hidden";
+  }
 
   selected = color;
 
-  if (selected === "yellow") {
-    yellow.style.visibility = "visible";
-  }
-
-  if (selected === "pink") {
-    pink.style.visibility = "visible";
-  }
-
-  if (selected === "blue") {
-    blue.style.visibility = "visible";
-  }
-  if (selected === "random") {
-    random.style.visibility = "visible";
-  }
+  document.getElementById(color).style.visibility = "visible";
 }
 
 console.log(selected);
