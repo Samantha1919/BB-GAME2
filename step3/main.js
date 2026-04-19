@@ -41,7 +41,7 @@ function addRandomColor() {
 }
 
 function goToStep3() {
-  const colors = ["pink", "yellow", "blue", "random"];
+  const colors = ["yellow", "pink", "blue", "random"];
 
   const paillesDiv = document.getElementById("step3");
 
@@ -49,7 +49,7 @@ function goToStep3() {
     console.log("color", color);
     const nouvellePaille = document.createElement("img"); // cree un element dom et ca cree comme une image img en html fabrique un nouvel element html en js
     nouvellePaille.src = `/assets/${color}-straw.svg`;
-    nouvellePaille.onclick = () => chooseStraw(color);
+    // nouvellePaille.onclick = () => selection(color);
     paillesDiv.appendChild(nouvellePaille); // rend visible limage, l'élément construit dans la div dcp
     nouvellePaille.width = 175;
     nouvellePaille.height = 200;
@@ -63,5 +63,34 @@ function goToStep3() {
   h1.style.color = objectColor[color].h1;
   h2.style.color = objectColor[color].h2;
 }
+
+let selected = "";
+
+function selection(color) {
+  let yellow = document.getElementById("yellow");
+  let pink = document.getElementById("pink");
+  let blue = document.getElementById("blue");
+  let random = document.getElementById("random");
+
+  selected = color;
+
+  if (selected === "yellow") {
+    yellow.style.visibility = "visible";
+  }
+
+  if (selected === "pink") {
+    pink.style.visibility = "visible";
+  }
+
+  if (selected === "blue") {
+    blue.style.visibility = "visible";
+  }
+  if (selected === "random") {
+    random.style.visibility = "visible";
+  }
+}
+
+console.log(selected);
+console.log(color);
 
 goToStep3();
