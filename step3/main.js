@@ -101,13 +101,13 @@ function selection(color) {
   //   yellow.style.visibility = "hidden";
   // }
 
-  const straws = ["yellow", "pink", "blue", "random"];
+  const color = ["yellow", "pink", "blue", "random"];
 
   for (let s of straws) {
     document.getElementById(s).style.visibility = "hidden";
   }
 
-  selected = color;
+  selected = color; // c normal que ca marche pas il a pas les colors en param
 
   document.getElementById(color).style.visibility = "visible";
 }
