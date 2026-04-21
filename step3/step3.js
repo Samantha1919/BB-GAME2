@@ -112,4 +112,11 @@ function selection(colorSelected) {
   // document.getElementById(color).style.visibility = "visible";
 }
 
+function saveStraw() {
+  localStorage.setItem("colorOfStraw", selected); // couleur de la paille
+  document.location.href = "/step4/index.html?color=" + color; // couleur du backgroundColor du bubble tea
+}
+
 goToStep3();
+
+window.saveStraw = saveStraw; // exporte la fonction

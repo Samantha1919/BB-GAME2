@@ -1,0 +1,41 @@
+body {
+  text-align: center;
+  background-color: rgb(189, 220, 234);
+}
+
+html {
+  height: 100%;
+}
+
+h1 {
+  font-family: "Jersey 10";
+  text-align: center;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-bottom: 90px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0;
+  margin-top: 0;
+}
+
+.strawImage {
+  height: 430px;
+  position: absolute;
+  top: -66px;
+}
+
+.straws {
+  position: relative;
+}
