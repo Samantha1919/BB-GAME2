@@ -45,16 +45,16 @@ function goToStep3() {
 
   const paillesDiv = document.getElementById("step3");
 
-  for (let color of colors) {
-    console.log("color", color);
+  for (let currentColor of colors) {
     const nouvellePaille = document.createElement("img"); // cree un element dom et ca cree comme une image img en html fabrique un nouvel element html en js
-    nouvellePaille.src = `/assets/${color}-straw.svg`;
-    nouvellePaille.onclick = () => selection(color);
+    nouvellePaille.src = `/assets/${currentColor}-straw.svg`;
+    nouvellePaille.onclick = () => selection(currentColor);
     paillesDiv.appendChild(nouvellePaille); // rend visible limage, l'élément construit dans la div dcp
     nouvellePaille.width = 175;
     nouvellePaille.height = 200;
   }
 
+  // pailles a mettre sur le bubble tea qui apapraissent
   const image = localStorage.getItem("monImage");
   const image2 = document.getElementById("image2");
   image2.src = image;
@@ -64,55 +64,52 @@ function goToStep3() {
   h2.style.color = objectColor[color].h2;
 }
 
-//let selected = "";
+let selected = "";
 
-function selection(color) {
-  // let yellow = document.getElementById("yellow");
-  // let pink = document.getElementById("pink");
-  // let blue = document.getElementById("blue");
-  // let random = document.getElementById("random");
+function selection(colorSelected) {
+  let yellow = document.getElementById("yellow");
+  let pink = document.getElementById("pink");
+  let blue = document.getElementById("blue");
+  let random = document.getElementById("random");
 
-  // selected = color;
+  selected = colorSelected;
 
-  // if (selected === "yellow") {
-  //   yellow.style.visibility = "visible";
-  //   pink.style.visibility = "hidden";
-  //   blue.style.visibility = "hidden";
-  //   random.style.visibility = "hidden";
-  // }
-
-  // if (selected === "pink") {
-  //   pink.style.visibility = "visible";
-  //   blue.style.visibility = "hidden";
-  //   yellow.style.visibility = "hidden";
-  //   random.style.visibility = "hidden";
-  // }
-
-  // if (selected === "blue") {
-  //   blue.style.visibility = "visible";
-  //   pink.style.visibility = "hidden";
-  //   yellow.style.visibility = "hidden";
-  //   random.style.visibility = "hidden";
-  // }
-  // if (selected === "random") {
-  //   random.style.visibility = "visible";
-  //   pink.style.visibility = "hidden";
-  //   blue.style.visibility = "hidden";
-  //   yellow.style.visibility = "hidden";
-  // }
-
-  const color = ["yellow", "pink", "blue", "random"];
-
-  for (let s of straws) {
-    document.getElementById(s).style.visibility = "hidden";
+  if (selected === "yellow") {
+    yellow.style.visibility = "visible";
+    pink.style.visibility = "hidden";
+    blue.style.visibility = "hidden";
+    random.style.visibility = "hidden";
   }
 
-  selected = color; // c normal que ca marche pas il a pas les colors en param
+  if (selected === "pink") {
+    pink.style.visibility = "visible";
+    blue.style.visibility = "hidden";
+    yellow.style.visibility = "hidden";
+    random.style.visibility = "hidden";
+  }
 
-  document.getElementById(color).style.visibility = "visible";
+  if (selected === "blue") {
+    blue.style.visibility = "visible";
+    pink.style.visibility = "hidden";
+    yellow.style.visibility = "hidden";
+    random.style.visibility = "hidden";
+  }
+  if (selected === "random") {
+    random.style.visibility = "visible";
+    pink.style.visibility = "hidden";
+    blue.style.visibility = "hidden";
+    yellow.style.visibility = "hidden";
+  }
+
+  // const colors = ["yellow", "pink", "blue", "random"];
+
+  // for (let s of straws) {
+  //   document.getElementById(s).style.visibility = "hidden";
+  // }
+
+  // //selected = color; // c normal que ca marche pas il a pas les colors en param
+
+  // document.getElementById(color).style.visibility = "visible";
 }
-
-console.log(selected);
-console.log(color);
 
 goToStep3();
