@@ -1,8 +1,6 @@
+let params = new URLSearchParams(document.location.search);
 let h1 = document.getElementById("h1");
 let h2 = document.getElementById("h2");
-let bubbleTeaName = document.getElementById("bubbleTeaName");
-let button = document.getElementById("next-btn");
-let params = new URLSearchParams(document.location.search);
 let color = params.get("color") ?? "yellow"; // le ?? sapelle "nullish coalescing operator" et il sert a donner une valeur par defaut
 let objectColor = {
   // "un index" "recupere dcp genre yellow avec tout ce quil y a dans les accolades, recup la valeur de yellow"
@@ -41,6 +39,10 @@ function addRandomColor() {
   return "#" + R + G + B; // prend le hasthag ren html
 }
 
+let name = document.getElementById("bubbleTeaName");
+console.log("name", name);
+name.textContent = localStorage.getItem("bubbleTeaName"); // le texte du h3 cest ca ...
+
 const image = localStorage.getItem("monImage"); // image du verre du bubble tea
 const image2 = document.getElementById("image2");
 image2.src = image;
@@ -48,30 +50,8 @@ image2.style.backgroundColor = objectColor[color].backgroundColor;
 
 const strawColor = localStorage.getItem("colorOfStraw"); // recup la couleur de la paille
 const strawImage2 = document.getElementById("strawImage"); // recup lelement dans le html
-
 if (strawColor !== "") {
   strawImage2.src = `/assets/straw-${strawColor}.svg`; // et dcp si c egal a rien bah tu fais rien
 }
 
-h1.style.color = objectColor[color].h1; // ce que tu mets entre les [] cest lindex dcp la color
-h2.style.color = objectColor[color].h2;
-
-function verifyName() {
-  if (bubbleTeaName.value !== "") {
-    button.disabled = false;
-    button.style.opacity = 1;
-  } else {
-    button.disabled = true;
-    button.style.opacity = 0.5;
-  }
-
-  console.log(bubbleTeaName.value);
-}
-
-function goToStep5() {
-  let name = localStorage.setItem("bubbleTeaName", bubbleTeaName.value); // il met la valeur dans la "variable" genre local storage b.v
-  document.location.href = "../step5/index.html?color=" + color;
-}
-
-window.verifyName = verifyName; // export la fonction
-window.goToStep5 = goToStep5;
+h1.style.color = objectColor[color].h1;
