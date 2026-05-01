@@ -41,7 +41,7 @@ h2 {
 }
 
 .frames {
-  margin: 0 auto;
+  position: relative;
 }
 
 .frame1 {
@@ -50,18 +50,22 @@ h2 {
 
 .frame2 {
   visibility: hidden;
+  display: none;
 }
 
 .frame3 {
   visibility: hidden;
+  display: none;
 }
 
 .frame4 {
   visibility: hidden;
+  display: none;
 }
 
 .frame5 {
   visibility: hidden;
+  display: none;
 }
 
 .frame6 {
@@ -70,10 +74,12 @@ h2 {
 
 .frame7 {
   visibility: hidden;
+  display: none;
 }
 
 .frame8 {
   visibility: hidden;
+  display: none;
 }
 
 #next-div {
