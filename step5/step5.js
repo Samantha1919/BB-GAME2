@@ -55,3 +55,6 @@ if (strawColor !== "") {
 }
 
 h1.style.color = objectColor[color].h1;
+h2.style.color = objectColor[color].h2;
+
+const frames = [];

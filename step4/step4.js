@@ -5,7 +5,7 @@ let button = document.getElementById("next-btn");
 let params = new URLSearchParams(document.location.search);
 let color = params.get("color") ?? "yellow"; // le ?? sapelle "nullish coalescing operator" et il sert a donner une valeur par defaut
 let objectColor = {
-  // "un index" "recupere dcp genre yellow avec tout ce quil y a dans les accolades, recup la valeur de yellow"
+  // "un index" recupere dcp genre yellow avec tout ce quil y a dans les accolades, recup la valeur de yellow
   yellow: {
     backgroundColor: "#F7F4C8",
     h1: "#EB6E00",

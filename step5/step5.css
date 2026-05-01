@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-color: rgb(189, 220, 234);
+  background-color: rgb(228, 233, 235);
 }
 
 html {
@@ -19,7 +19,7 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 90px;
+  margin-bottom: 130px;
   text-align: center;
   font-family: monospace;
   font-size: 25px;
@@ -38,6 +38,42 @@ h2 {
 
 .straws {
   position: relative;
+}
+
+.frames {
+  margin: 0 auto;
+}
+
+.frame1 {
+  position: absolute;
+}
+
+.frame2 {
+  visibility: hidden;
+}
+
+.frame3 {
+  visibility: hidden;
+}
+
+.frame4 {
+  visibility: hidden;
+}
+
+.frame5 {
+  visibility: hidden;
+}
+
+.frame6 {
+  visibility: hidden;
+}
+
+.frame7 {
+  visibility: hidden;
+}
+
+.frame8 {
+  visibility: hidden;
 }
 
 #next-div {
