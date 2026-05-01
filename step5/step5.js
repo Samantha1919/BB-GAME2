@@ -42,7 +42,7 @@ function addRandomColor() {
 let name = document.getElementById("bubbleTeaName");
 console.log("name", name);
 name.textContent = localStorage.getItem("bubbleTeaName"); // le texte du h3 cest ca ...
-
+name.style.color = objectColor[color].h1;
 const image = localStorage.getItem("monImage"); // image du verre du bubble tea
 const image2 = document.getElementById("image2");
 image2.src = image;
@@ -57,4 +57,29 @@ if (strawColor !== "") {
 h1.style.color = objectColor[color].h1;
 h2.style.color = objectColor[color].h2;
 
+let frameId = 1;
+const maxId = 8;
+let imageFrame = document.getElementById("frame");
+
+function changeFrame(right) {
+  console.log("frameId before", frameId);
+  // right = false ou true, selon si on click sur fleche gauche ou droite
+  if (right === true) {
+    frameId = frameId + 1;
+  } else if (right === false) {
+    frameId = frameId - 1;
+  }
+
+  if (frameId > maxId) {
+    frameId = 1; // revient sur le premier cadre
+  } else if (frameId < 1) {
+    frameId = maxId; // revient sur le dernier cadre
+  }
+  console.log("frameId after", frameId);
+
+  imageFrame.src = `/assets/frame-${frameId}.png`;
+}
+
 const frames = [];
+
+window.changeFrame = changeFrame;

@@ -17,28 +17,28 @@
     <h1 id="h1">Step 5</h1>
     <h2 id="h2">Take a photo of your bubble tea</h2>
 
-    <div class="frames">
-      <img src="../assets/mini-arrow-left.svg" />
-      <img src="../assets/mini-arrow-right.svg" />
-      <img src="../assets/frame-1.png" class="frame1" id="frame1" />
-      <img src="../assets/frame-2.png" class="frame2" id="frame2" />
-      <img src="../assets/frame-3.png" class="frame3" id="frame3" />
-      <img src="../assets/frame-4.png" class="frame4" id="frame4" />
-      <img src="../assets/frame-5.png" class="frame5" id="frame5" />
-      <img src="../assets/frame-6.png" class="frame6" id="frame6" />
-      <img src="../assets/frame-7.png" class="frame7" id="frame7" />
-      <img src="../assets/frame-8.png" class="frame8" id="frame8" />
-    </div>
+    <div class="global">
+      <img id="image2" alt="" />
+      <!--le verre du bubble tea-->
 
-    <div class="straws">
       <img id="strawImage" class="strawImage" />
       <!--paille qui apparait sur le bubble tea-->
+
+      <img
+        src="../assets/mini-arrow-left.svg"
+        class="arrow-frame-left"
+        onclick="changeFrame(false)"
+      />
+      <img
+        src="../assets/mini-arrow-right.svg"
+        class="arrow-frame-right"
+        onclick="changeFrame(true)"
+      />
+
+      <img src="../assets/frame-1.png" class="frame" id="frame" />
+
+      <h3 id="bubbleTeaName"></h3>
     </div>
-
-    <img id="image2" alt="" />
-    <!--le verre du bubble tea-->
-
-    <h3 id="bubbleTeaName"></h3>
 
     <div id="next-div">
       <button id="next-btn">
