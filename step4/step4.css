@@ -75,3 +75,26 @@ h2 {
   width: 64px;
   height: auto;
 }
+
+label {
+  color: #7f1e65;
+  font-family: "Jersey 10";
+  font-size: 35px;
+}
+
+.nameInputContainer {
+  border: 5px solid #7f1e65;
+  padding: 10px;
+  width: 524px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #7f1e65;
+  font-family: "Jersey 10";
+  font-size: 35px;
+}
