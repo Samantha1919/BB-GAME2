@@ -77,7 +77,7 @@ function changeFrame(right) {
   }
   console.log("frameId after", frameId);
 
-  imageFrame.src = `/assets/frame-${frameId}.png`;
+  imageFrame.src = `/assets/group-${frameId}.svg`;
 }
 
 const frames = [];
