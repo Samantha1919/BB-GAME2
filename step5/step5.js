@@ -42,7 +42,7 @@ function addRandomColor() {
 let name = document.getElementById("bubbleTeaName");
 console.log("name", name);
 name.textContent = localStorage.getItem("bubbleTeaName"); // le texte du h3 cest ca ...
-name.style.color = objectColor[color].h1;
+name.style.color = objectColor.pink.h1;
 const image = localStorage.getItem("monImage"); // image du verre du bubble tea
 const image2 = document.getElementById("image2");
 image2.src = image;
@@ -58,7 +58,7 @@ h1.style.color = objectColor[color].h1;
 h2.style.color = objectColor[color].h2;
 
 let frameId = 1;
-const maxId = 8;
+const maxId = 7;
 let imageFrame = document.getElementById("frame");
 
 function changeFrame(right) {
@@ -80,6 +80,10 @@ function changeFrame(right) {
   imageFrame.src = `/assets/group-${frameId}.svg`;
 }
 
-const frames = [];
+function goToStep6() {
+  let name = localStorage.setItem("bubbleTeaName", bubbleTeaName.value); // il met la valeur dans la "variable" genre local storage b.v
+  document.location.href = "../step6/index.html?color=" + color;
+}
 
 window.changeFrame = changeFrame;
+window.goToStep6 = goToStep6;

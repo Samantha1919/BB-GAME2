@@ -29,3 +29,32 @@ h2 {
   padding: 0;
   margin-top: 0;
 }
+
+.strawImage {
+  height: 430px;
+  position: absolute;
+  left: 50%;
+  bottom: 44px;
+}
+
+.global {
+  margin: auto;
+  position: relative;
+}
+
+.frame {
+  position: absolute;
+  bottom: -105px;
+  width: 760px;
+  left: calc(50% - 374px);
+}
+
+#bubbleTeaName {
+  position: absolute;
+  left: calc(50% - 90px);
+  font-family: "Jersey 10";
+  font-size: 48px;
+  width: 10ch;
+  word-wrap: anywhere;
+  bottom: -145px;
+}

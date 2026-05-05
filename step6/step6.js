@@ -38,3 +38,24 @@ function addRandomColor() {
 
   return "#" + R + G + B; // prend le hasthag ren html
 }
+
+let name = document.getElementById("bubbleTeaName");
+console.log("name", name);
+name.textContent = localStorage.getItem("bubbleTeaName"); // le texte du h3 cest ca ...
+name.style.color = objectColor.pink.h1;
+const image = localStorage.getItem("monImage"); // image du verre du bubble tea
+const image2 = document.getElementById("image2");
+image2.src = image;
+image2.style.backgroundColor = objectColor[color].backgroundColor;
+
+const strawColor = localStorage.getItem("colorOfStraw"); // recup la couleur de la paille
+const strawImage2 = document.getElementById("strawImage"); // recup lelement dans le html
+if (strawColor !== "") {
+  strawImage2.src = `/assets/straw-${strawColor}.svg`; // et dcp si c egal a rien bah tu fais rien
+}
+
+let imageFrame = document.getElementById("frame");
+imageFrame.src = `/assets/group-${frameId}.svg`;
+
+h1.style.color = objectColor[color].h1;
+h2.style.color = objectColor[color].h2;
