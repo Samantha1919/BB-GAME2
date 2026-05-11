@@ -54,8 +54,8 @@ if (strawColor !== "") {
   strawImage2.src = `/assets/straw-${strawColor}.svg`; // et dcp si c egal a rien bah tu fais rien
 }
 
-let imageFrame = document.getElementById("frame");
-imageFrame.src = `/assets/group-${frameId}.svg`;
+let imageFrame = document.getElementById("framePhoto");
+imageFrame.src = localStorage.getItem("framePhoto"); // ca devrait etre get item
 
 h1.style.color = objectColor[color].h1;
 h2.style.color = objectColor[color].h2;
