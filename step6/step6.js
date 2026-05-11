@@ -40,7 +40,6 @@ function addRandomColor() {
 }
 
 let name = document.getElementById("bubbleTeaName");
-console.log("name", name);
 name.textContent = localStorage.getItem("bubbleTeaName"); // le texte du h3 cest ca ...
 name.style.color = objectColor.pink.h1;
 const image = localStorage.getItem("monImage"); // image du verre du bubble tea

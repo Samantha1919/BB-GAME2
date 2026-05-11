@@ -81,7 +81,6 @@ function changeFrame(right) {
 }
 
 function goToStep6() {
-  let name = localStorage.setItem("bubbleTeaName", bubbleTeaName.value); // il met la valeur dans la "variable" genre local storage b.v
   localStorage.setItem("framePhoto", imageFrame); // pas .value ?
   document.location.href = "../step6/index.html?color=" + color;
 }
