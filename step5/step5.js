@@ -81,7 +81,7 @@ function changeFrame(right) {
 }
 
 function goToStep6() {
-  localStorage.setItem("framePhoto", imageFrame); // pas .value ?
+  localStorage.setItem("framePhoto", `/assets/group-${frameId}.svg`); // pas .value ?
   document.location.href = "../step6/index.html?color=" + color;
 }
 

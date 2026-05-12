@@ -88,6 +88,8 @@ label {
   width: 524px;
   margin: 0 auto;
   margin-top: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 input {

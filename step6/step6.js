@@ -58,3 +58,18 @@ imageFrame.src = localStorage.getItem("framePhoto"); // ca devrait etre get item
 
 h1.style.color = objectColor[color].h1;
 h2.style.color = objectColor[color].h2;
+
+function downloadImage() {
+  html2canvas(document.getElementById("global")).then((canvas) => {
+    // on dit que le canvas c la div element html avec lid
+    const imageFinal = canvas.toDataURL(); // transforme lelement en image base 64
+    const link = document.createElement("a"); // a c pr la balise <a> html
+    link.href = imageFinal; // le href dans la balise <a> href a linteirur ...
+    link.download = "bubbletea.png"; // le nom de limage et son .
+    document.body.appendChild(link); // fait apparaitre le lien tt en bas avant la fin du body mais on peut pas le voir
+    link.click(); // ca fait un click sur le lien et permet de telcharger limage
+    document.body.removeChild(link); // supp le lien mm si on le voit pas
+  });
+}
+
+window.downloadImage = downloadImage;

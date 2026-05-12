@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Step 6</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <!-- script permettant de faire de screen delements html-->
     <link rel="stylesheet" href="./step6.css" />
     <script type="module" src="./step6.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,8 +18,7 @@
   <body>
     <h1 id="h1">CONGRATULATIONS</h1>
     <h2 id="h2">You finished the game !</h2>
-
-    <div class="global">
+    <div class="global" id="global">
       <img id="image2" alt="" />
       <!--le verre du bubble tea-->
 
@@ -29,7 +30,7 @@
       <h3 id="bubbleTeaName"></h3>
     </div>
     <div class="buttons">
-      <img src="../assets/download.svg" />
+      <img src="../assets/download.svg" onclick="downloadImage()" />
       <img
         src="../assets/reload.svg"
         onclick="document.location.href='../index.html'"
@@ -37,4 +38,3 @@
     </div>
   </body>
 </html>
-<!--modifier et ajouter dans une func en js-->

@@ -19,7 +19,6 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 130px;
   text-align: center;
   font-family: monospace;
   font-size: 25px;
@@ -34,17 +33,17 @@ h2 {
   height: 430px;
   position: absolute;
   left: 50%;
-  bottom: 44px;
+  bottom: 156px;
 }
 
 .global {
   margin: auto;
   position: relative;
+  height: 645px;
 }
 
 .frame {
   position: absolute;
-  bottom: -105px;
   width: 760px;
   left: calc(50% - 374px);
 }
@@ -56,9 +55,18 @@ h2 {
   font-size: 48px;
   width: 10ch;
   word-wrap: anywhere;
-  bottom: -145px;
+  bottom: -40px;
 }
 
 .buttons {
-  margin-top: 130px;
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+#image2 {
+  position: absolute;
+  bottom: 128px;
+  left: calc(50% - 155px); /*la moitie de 310 */
 }
