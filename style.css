@@ -77,11 +77,9 @@ h2 {
   padding: 70px;
   padding-top: 50px;
   padding-left: 0;
-
   align-content: start;
   justify-content: space-between;
   display: flex;
-
   text-align: right;
 }
 
