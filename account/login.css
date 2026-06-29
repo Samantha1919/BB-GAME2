@@ -50,6 +50,7 @@ label {
   margin-top: 20px;
   position: relative;
   z-index: 2;
+  margin-bottom: 40px;
 }
 
 input {
@@ -103,4 +104,16 @@ input {
   height: 190px;
   position: absolute;
   left: 70px;
+}
+
+.new-text {
+  font-family: monospace;
+  font-size: 23px;
+}
+
+.create-account-text {
+  font-family: monospace;
+  font-size: 23px;
+  color: #7f1e65;
+  font-weight: bold;
 }
