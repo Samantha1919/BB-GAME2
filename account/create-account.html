@@ -4,9 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="./create-account.css" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Kalnia+Glaze:wght@100..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>Account creation</h1>
     <h2>Create your account</h2>
+
+    <div class="allContainers">
+      <div class="InputContainer">
+        <label>username : </label>
+        <input type="text" placeholder="Your name here" id="username" />
+      </div>
+
+      <div class="InputContainer">
+        <label> password : </label>
+        <input type="text" placeholder="Your password here" id="password" />
+      </div>
+       <div class="InputContainer">
+        <label> repeat password : </label>
+        <input type="text" placeholder="Your password here" id="password" />
+      </div>
+      <div id="connect-div">
+        <button onclick="document.location.href='./login.html'" id="connect-btn">
+          CREATE ACCOUNT<img src="../assets/arrow-right.svg" id="arrow-right" />
+        </button>
+      </div>
+
+      <div>
+        <p class="already-text">Already have an account ?</p>
+        <a href="./login.html" class="login-text"
+          >Go to connect page</a
+        >
+      </div>
+    </div>
+    <div class="imgContainer">
+      <img src="../assets/melody-unhappy.svg" class="melody" />
   </body>
 </html>

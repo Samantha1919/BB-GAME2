@@ -104,14 +104,15 @@ input {
   height: 190px;
   position: absolute;
   left: 70px;
+  bottom: -150px;
 }
 
-.new-text {
+.already-text {
   font-family: monospace;
   font-size: 23px;
 }
 
-.create-account-text {
+.login-text {
   font-family: monospace;
   font-size: 23px;
   color: #7f1e65;
